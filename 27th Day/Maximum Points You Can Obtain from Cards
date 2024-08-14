@@ -1,0 +1,15 @@
+lass Solution {
+public:
+    int maxScore(vector<int>& cardPoints, int k) {
+     int maxScore=0,curScore=0;
+     for(int i=0;i<k;i++)
+      maxScore+=cardPoints[i];
+     curScore=maxScore;
+     for(int i=1;i<=k;i++)
+     {
+    curScore=curScore + cardPoints[cardPoints.size()-i]-cardPoints[k-i];
+        maxScore=std::max(curScore,maxScore);
+     }
+      return maxScore;
+    }
+};
